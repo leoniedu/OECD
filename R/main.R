@@ -211,7 +211,7 @@ get_dataset <- function(dataset, filter = NULL, start_time = NULL, end_time = NU
   
   url <- httr::build_url(url_list)
   
-  df <- readsdmx::read_sdmx((url), ...)
+  df <- as.data.frame(readsdmx::readSDMX((url), ...))
   class(df) <- c("tbl_df", "tbl", "data.frame")
   df
 }
